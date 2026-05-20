@@ -1,35 +1,40 @@
 
 
 // ==========================================
-// Step 1:
-// Create interface for component props
+// Props Interface
 // ==========================================
 
-// Define props structure
 interface GreetingProps {
 
-    // name must be a string
+    // User name
     name: string;
 }
 
 // ==========================================
-// Step 2:
-// Add prop types to component
+// Greeting Component
 // ==========================================
 
-// Functional component with typed props
 const Greeting = ({ name }: GreetingProps) => {
 
     return (
 
-        // Display greeting message
-        <div>
-            Hello, {name}!
+        // Card container
+        <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 rounded-2xl shadow-lg text-white text-center">
+
+            {/* Heading */}
+            <h1 className="text-3xl font-bold mb-2">
+                Welcome 👋
+            </h1>
+
+            {/* Greeting message */}
+            <p className="text-lg">
+                Hello, {name}!
+            </p>
+
         </div>
     );
 };
 
-// Export component
 export default Greeting;
 
 

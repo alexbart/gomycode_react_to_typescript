@@ -1,22 +1,19 @@
-import Counter from "./components/Counter"
-import Greeting from "./components/Greeting"
-
+// Import components
+import Greeting from "./components/Greeting";
+import Counter from "./components/Counter";
 
 function App() {
-
   return (
-    <>
-      <div>
+    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center gap-10 p-6">
+      {/* Greeting component */}
+      <Greeting name="John Doe" />
+      {/* Counter component */}
+      <Greeting name="Alex Kiprop" />
+      <Counter />
 
-        {/* Greeting component */}
-        <Greeting name="Alex" />
 
-        {/* Counter component */}
-        <Counter />
-
-      </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

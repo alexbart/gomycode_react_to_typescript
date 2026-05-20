@@ -1,70 +1,59 @@
-// Import React and Component
+// Import React
 import React, { Component } from "react";
 
 // ==========================================
-// Step 1:
-// Create interface for component state
+// State Interface
 // ==========================================
 
-// Define state structure
 interface CounterState {
 
-    // count must be a number
+    // Counter value
     count: number;
 }
 
 // ==========================================
-// Step 2:
-// Add state typing to Component
+// Counter Component
 // ==========================================
 
-// No props are used,
-// so first generic type is {}
 class Counter extends Component<{}, CounterState> {
 
-    // ==========================================
-    // Step 3:
-    // Initialize typed state
-    // ==========================================
-
+    // Initial state
     state: CounterState = {
 
-        // Initial counter value
         count: 0,
     };
 
-    // ==========================================
-    // Step 4:
-    // Create increment method
-    // ==========================================
-
+    // Increment method
     increment = (): void => {
 
-        // Update state
         this.setState({
 
             count: this.state.count + 1,
         });
     };
 
-    // ==========================================
-    // Step 5:
-    // Render UI
-    // ==========================================
-
     render() {
 
         return (
 
-            <div>
+            // Card container
+            <div className="bg-red-900 text-white p-8 rounded-2xl shadow-xl text-center w-full max-w-md mx-auto mt-10">
 
-                {/* Display counter */}
-                <p>
-                    Count: {this.state.count}
+                {/* Title */}
+                <h2 className="text-3xl font-bold mb-6">
+                    Counter App
+                </h2>
+
+                {/* Count display */}
+                <p className="text-5xl font-extrabold text-blue-400 mb-6">
+                    {this.state.count}
                 </p>
 
                 {/* Increment button */}
-                <button onClick={this.increment}>
+                <button
+                    onClick={this.increment}
+                    className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl font-semibold"
+                >
                     Increment
                 </button>
 
@@ -73,7 +62,6 @@ class Counter extends Component<{}, CounterState> {
     }
 }
 
-// Export component
 export default Counter;
 
 
